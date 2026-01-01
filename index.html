@@ -1,0 +1,25 @@
+<!DOCTYPE html><button onclick="connectWallet()">Connect TON Wallet</button>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VND Mini App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>VANDACOIN (VND)</h1>
+
+    <p id="user">Loading user...</p>
+
+    <input type="number" id="amount" placeholder="Enter VND Amount">
+
+    <button onclick="buyVND()">Buy VND</button>
+    <button onclick="sellVND()">Sell VND</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

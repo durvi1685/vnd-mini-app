@@ -1,32 +1,22 @@
 const tg = window.Telegram.WebApp;
-tg.expand();
 
-const user = tg.initDataUnsafe.user;
+tg.ready();
 
-if (user) {
-  document.getElementById("user").innerText =
-    `Welcome, ${user.first_name}`;
-} else {
-  document.getElementById("user").innerText =
-    "Opened outside Telegram";
+document.getElementById("user").innerText =
+  tg.initDataUnsafe?.user
+    ? "Hello, " + tg.initDataUnsafe.user.first_name
+    : "Opened outside Telegram";
+
+function connectWallet() {
+  alert("TON Wallet connection coming soon");
 }
 
 function buyVND() {
   const amount = document.getElementById("amount").value;
-  if (!amount) {
-    alert("Enter amount");
-    return;
-  }
-
-  tg.showAlert("Buy request sent: " + amount + " VND");
+  alert("Buy VND: " + amount);
 }
 
 function sellVND() {
   const amount = document.getElementById("amount").value;
-  if (!amount) {
-    alert("Enter amount");
-    return;
-  }
-
-  tg.showAlert("Sell request sent: " + amount + " VND");
-} function connectWallet() {tg.showAlert("TON Wallet connect coming next 🔗");
+  alert("Sell VND: " + amount);
+}
